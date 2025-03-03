@@ -1,7 +1,6 @@
 import { type Meta } from '@storybook/react'
 
-import _Basic from './Stars-Basic'
-import _BlackBodyChromaticity from './Stars-BlackBodyChromaticity'
+import _Spherical from './Stars-Spherical'
 
 export default {
   title: 'atmosphere/Stars',
@@ -10,5 +9,4 @@ export default {
   }
 } satisfies Meta
 
-export const Basic = _Basic
-export const BlackBodyChromaticity = _BlackBodyChromaticity
+export const Spherical = _Spherical
