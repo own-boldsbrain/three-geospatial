@@ -92,7 +92,7 @@ Alternatively, if you use VS Code, installing the [Prettier extension](https://m
 
 ### Running Storybook
 
-All examples are created as [Storybook](https://storybook.js.org) stories, hosted at: https://takram-design-engineering.github.io/three-geospatial/.
+All examples are created as [Storybook](https://storybook.js.org) stories, hosted at: [https://takram-design-engineering.github.io/three-geospatial/](https://takram-design-engineering.github.io/three-geospatial/).
 
 The command below runs Storybook locally on port 4400 by default. You can override the port by adding the `--port` option:
 
@@ -113,7 +113,7 @@ Some stories use Cesium Ion assets. To display them correctly, search for the fo
 
 You may occasionally encounter the following errors, especially when switching branches:
 
-```
+```text
 The file does not exist at "..." which is in the optimize deps directory.
 The dependency might be incompatible with the dep optimizer.
 Try adding it to `optimizeDeps.exclude`.

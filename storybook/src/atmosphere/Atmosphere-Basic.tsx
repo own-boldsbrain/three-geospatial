@@ -53,36 +53,51 @@ const terrainBasicMaterial = new MeshBasicMaterial({ color: 'gray' })
 const terrainLambertMaterial = new MeshLambertMaterial({ color: 'gray' })
 
 const Scene: FC = () => {
+  // Configurações de mapeamento de tom para ajustar exposição
   const { toneMappingMode } = useToneMappingControls({ exposure: 10 })
+
+  // Controles para efeitos visuais
   const { lensFlare, normal, depth } = useControls(
     'effects',
     {
-      lensFlare: true,
-      depth: false,
-      normal: false
+      lensFlare: { value: true, label: 'Lens Flare Effect' },
+      depth: { value: false, label: 'Depth Effect' },
+      normal: { value: false, label: 'Normal Effect' }
     },
     { collapsed: true }
   )
+
+  // Controle de data e hora para simulação de movimento solar
   const motionDate = useLocalDateControls()
+
+  // Configurações da atmosfera
   const { correctAltitude } = useControls(
     'atmosphere',
-    { correctAltitude: true },
+    {
+      correctAltitude: { value: true, label: 'Correct Altitude for Atmosphere' }
+    },
     { collapsed: true }
   )
+
+  // Configurações de perspectiva aérea
   const { enabled, transmittance, inscatter } = useControls(
     'aerial perspective',
     {
-      enabled: true,
-      transmittance: true,
-      inscatter: true
+      enabled: { value: true, label: 'Enable Aerial Perspective' },
+      transmittance: { value: true, label: 'Transmittance Effect' },
+      inscatter: { value: true, label: 'Inscatter Effect' }
     }
   )
+
+  // Configurações de iluminação
   const { mode, sun, sky } = useControls('lighting', {
     mode: {
-      options: ['post-process', 'light-source'] as const
+      value: 'post-process' as const,
+      options: ['post-process', 'light-source'] as const,
+      label: 'Lighting Mode'
     },
-    sun: true,
-    sky: true
+    sun: { value: true, label: 'Sun Light' },
+    sky: { value: true, label: 'Sky Light' }
   })
 
   const camera = useThree(({ camera }) => camera)
